@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpendWise Dashboard</title>
+  
+  <!-- Google Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- 1. Sidebar Navigation Menu -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">💳</span>
+        <h2>SpendWise</h2>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">
+          <span class="nav-icon">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">💸</span>
+          <span>Expenses</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🎯</span>
+          <span>Budgets</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📈</span>
+          <span>Analytics</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- 2. Main Layout Area -->
+    <div class="main-wrapper">
+      
+      <!-- Header -->
+      <header class="header">
+        <div class="header-title">
+          <h1>Overview & Analytics</h1>
+          <p>Welcome back, John! Here is your financial summary.</p>
+        </div>
+        <div class="header-profile">
+          <span class="notification-badge">🔔</span>
+          <div class="user-avatar">JD</div>
+        </div>
+      </header>
+
+      <!-- Main Content / Dashboard Grid -->
+      <main class="content-body">
+        <section class="cards-grid">
+          
+          <!-- Card 1: Food -->
+          <article class="card" tabindex="0">
+            <div class="card-header">
+              <span class="card-icon food">🍕</span>
+              <span class="card-tag">Monthly</span>
+            </div>
+            <div class="card-body">
+              <h3>Food & Dining</h3>
+              <p class="amount">$450.00</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+              </div>
+              <span class="subtext">75% of $600 budget</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Transport -->
+          <article class="card" tabindex="0">
+            <div class="card-header">
+              <span class="card-icon transport">🚗</span>
+              <span class="card-tag">Monthly</span>
+            </div>
+            <div class="card-body">
+              <h3>Transport</h3>
+              <p class="amount">$180.50</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%;"></div>
+              </div>
+              <span class="subtext">60% of $300 budget</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Rent -->
+          <article class="card" tabindex="0">
+            <div class="card-header">
+              <span class="card-icon rent">🏠</span>
+              <span class="card-tag">Fixed</span>
+            </div>
+            <div class="card-body">
+              <h3>Rent & Housing</h3>
+              <p class="amount">$1,200.00</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 100%;"></div>
+              </div>
+              <span class="subtext">100% of $1,200 budget</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Entertainment -->
+          <article class="card" tabindex="0">
+            <div class="card-header">
+              <span class="card-icon entertainment">🎬</span>
+              <span class="card-tag">Monthly</span>
+            </div>
+            <div class="card-body">
+              <h3>Entertainment</h3>
+              <p class="amount">$125.00</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 50%;"></div>
+              </div>
+              <span class="subtext">50% of $250 budget</span>
+            </div>
+          </article>
+
+          <!-- Card 5: Savings -->
+          <article class="card" tabindex="0">
+            <div class="card-header">
+              <span class="card-icon savings">💰</span>
+              <span class="card-tag">Goal</span>
+            </div>
+            <div class="card-body">
+              <h3>Savings Goal</h3>
+              <p class="amount">$850.00</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%;"></div>
+              </div>
+              <span class="subtext">85% of $1,000 goal</span>
+            </div>
+          </article>
+
+          <!-- Card 6: Utilities -->
+          <article class="card" tabindex="0">
+            <div class="card-header">
+              <span class="card-icon utilities">⚡</span>
+              <span class="card-tag">Fixed</span>
+            </div>
+            <div class="card-body">
+              <h3>Utilities</h3>
+              <p class="amount">$210.00</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div>
+              </div>
+              <span class="subtext">70% of $300 budget</span>
+            </div>
+          </article>
+
+        </section>
+      </main>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

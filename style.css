@@ -1,0 +1,296 @@
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES & THEMING (Light Theme Default)
+   ========================================================================== */
+:root {
+  --brand-color: #4318ff;
+  --brand-hover: #3311cc;
+  --accent-color: #01b574;
+  --surface-bg: #f4f7fe;
+  --card-bg: #ffffff;
+  --text-primary: #2b3674;
+  --text-secondary: #a3aed0;
+  --border-color: #e9ecef;
+  --shadow-sm: 0px 4px 12px rgba(112, 144, 176, 0.08);
+  --shadow-hover: 0px 18px 40px rgba(112, 144, 176, 0.2);
+}
+
+/* Dark Theme (Stretch Goal) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-color: #7551ff;
+    --brand-hover: #5d36f0;
+    --accent-color: #01b574;
+    --surface-bg: #0b1437;
+    --card-bg: #111c44;
+    --text-primary: #ffffff;
+    --text-secondary: #a3aed0;
+    --border-color: #1b254b;
+    --shadow-sm: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0px 18px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--surface-bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   3. OVERALL PAGE LAYOUT (CSS GRID)
+   ========================================================================== */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   4. SIDEBAR NAVIGATION (FLEXBOX)
+   ========================================================================== */
+.sidebar {
+  background-color: var(--card-bg);
+  border-right: 1px solid var(--border-color);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 1.8rem;
+}
+
+.brand h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  color: var(--brand-color);
+  font-weight: 700;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: var(--brand-color);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   5. HEADER & MAIN CONTENT (FLEXBOX & GRID)
+   ========================================================================== */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.header-title p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--brand-color);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.content-body {
+  padding: 32px;
+  flex: 1;
+}
+
+/* Category Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* ==========================================================================
+   6. CARD COMPONENT & MICRO-INTERACTIONS
+   ========================================================================== */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  outline: none;
+  cursor: pointer;
+  /* Fast Micro-interaction requirement (<= 250ms) */
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* Card Hover & Keyboard Focus Animations */
+.card:hover,
+.card:focus {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background-color: var(--surface-bg);
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: var(--surface-bg);
+  color: var(--text-secondary);
+}
+
+.card-body h3 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.card-body .amount {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--surface-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--brand-color);
+  border-radius: 10px;
+}
+
+.subtext {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (Media Query < 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr; /* Collapses layout to single column */
+  }
+
+  .sidebar {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .header-profile {
+    align-self: flex-end;
+  }
+
+  .content-body {
+    padding: 20px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr; /* Single column cards on small screens */
+  }
+}
